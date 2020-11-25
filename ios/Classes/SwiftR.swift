@@ -467,6 +467,7 @@ open class Hub: NSObject {
     }
 
     handlers[method]?[callbackID] = callback
+    connection.runJavaScript("addHandler('\(callbackID)', '\(name)', '\(method)')")
   }
 
   func initialize() {
